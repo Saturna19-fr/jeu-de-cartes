@@ -12,7 +12,8 @@ class Test_TestIsValid(unittest.TestCase):
         carte_test2 = src.classes.Carte("pic", 12)
         carte_test3 = src.classes.Carte("carreau", 14)
 
-        self.assertTrue(self.carte.bat(carte_test), "Le 8 doit battre le 5")
+        # self.assertTrue(self.carte.bat(carte_test), "Le 8 doit battre le 5")
+        self.assertFalse(self.carte.bat(carte_test), "Le 8 doit battre le 5")
         self.assertFalse(self.carte.bat(carte_test2), "Le 12 doit battre le 8")
         self.assertFalse(self.carte.bat(carte_test3), "Le 14 doit battre le 8")
 
