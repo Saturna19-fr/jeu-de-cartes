@@ -43,11 +43,59 @@ pip install -r requirements.txt
 ```
 
 Cette commande installe les dépendances requises pour faire tourner dans les conditions optimales le programme.
-*Cette installation est globale. Pour n'installer que les dépendences sur le dossier en cours, vous pouvez installer un [environnement virtuel](https://docs.python.org/fr/3/tutorial/venv.html).*
+*Cette installation est globale. Pour n'installer que les dépendances sur le dossier en cours, vous pouvez installer un [environnement virtuel](https://docs.python.org/fr/3/tutorial/venv.html).*
 
 ### Lancer le code
 **O Captain, my Captain!** Il est temps de laisser la magie s'opérer.
 
 Dans votre terminal, exécutez votre plus beau `python main.py`.
 
+
+## Linux
+Prérequis:
+- Python 3.11
+- Le gestionnaire de paquets **pip3**
+- Git, pour cloner le dépôt
+- Savoir lire et comprendre des étapes simples
+- Google s'il y a des bugs, parce que je vais faire efficace
+
+
+### Récupérer le code
+Dans le terminal, lancer:
+
+```bash
+git clone https://github.com/Saturna19-fr/jeu-de-cartes.git
+```
+
+### Installer les dépendances
+Il faut créer un environnement virtuel dans votre répertoire.
+
+En fonction de la distribution, on peut avoir des méthodes différentes pour installer des paquets.
+
+> Pour certaines distributions, on devra installer un package supplémentaire:
+> ```sh
+> $ apt-get install -y python3-venv
+> ```
+
+Dans un terminal, dans le répertoire de notre projet, lancer la commande
+```
+python3 -m venv ./venv
+```
+(Décomposée: `python3` pour le programme, `-m` pour le module, `venv` pour le nom du module qui crée les **V**irtual **env**ironnements, et `./venv` pour le chemin de notre env à partir du répertoire actuel.)
+
+L'environnement doit être **activé**, donc on va faire à la suite la commande:
+```sh
+source ./venv/bin/activate
+```
+
+Et enfin, pour installer les paquets, on utilisera le gestionnaire pip3,
+```sh
+pip3 install -r requirements.txt
+```
+
 <!-- https://www.youtube.com/watch?v=AYYcBjtxp84 -->
+
+
+
+
+# Tests
