@@ -1,0 +1,214 @@
+{
+    "joueur1": [
+        {
+            "couleur": "carreaux",
+            "nombre": 3
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 7
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 6
+        },
+        {
+            "couleur": "carreaux",
+            "nombre": 6
+        },
+        {
+            "couleur": "carreaux",
+            "nombre": 4
+        },
+        {
+            "couleur": "coeur",
+            "nombre": 5
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 11
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 13
+        },
+        {
+            "couleur": "carreaux",
+            "nombre": 8
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 4
+        },
+        {
+            "couleur": "pic",
+            "nombre": 6
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 8
+        },
+        {
+            "couleur": "pic",
+            "nombre": 9
+        },
+        {
+            "couleur": "pic",
+            "nombre": 3
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 5
+        },
+        {
+            "couleur": "carreaux",
+            "nombre": 11
+        },
+        {
+            "couleur": "coeur",
+            "nombre": 4
+        },
+        {
+            "couleur": "coeur",
+            "nombre": 8
+        },
+        {
+            "couleur": "pic",
+            "nombre": 10
+        },
+        {
+            "couleur": "coeur",
+            "nombre": 9
+        },
+        {
+            "couleur": "carreaux",
+            "nombre": 10
+        },
+        {
+            "couleur": "pic",
+            "nombre": 5
+        },
+        {
+            "couleur": "carreaux",
+            "nombre": 12
+        },
+        {
+            "couleur": "coeur",
+            "nombre": 11
+        },
+        {
+            "couleur": "coeur",
+            "nombre": 2
+        },
+        {
+            "couleur": "coeur",
+            "nombre": 3
+        }
+    ],
+    "joueur2": [
+        {
+            "couleur": "coeur",
+            "nombre": 6
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 14
+        },
+        {
+            "couleur": "carreaux",
+            "nombre": 14
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 12
+        },
+        {
+            "couleur": "pic",
+            "nombre": 13
+        },
+        {
+            "couleur": "coeur",
+            "nombre": 13
+        },
+        {
+            "couleur": "pic",
+            "nombre": 14
+        },
+        {
+            "couleur": "carreaux",
+            "nombre": 5
+        },
+        {
+            "couleur": "coeur",
+            "nombre": 10
+        },
+        {
+            "couleur": "pic",
+            "nombre": 12
+        },
+        {
+            "couleur": "carreaux",
+            "nombre": 2
+        },
+        {
+            "couleur": "carreaux",
+            "nombre": 13
+        },
+        {
+            "couleur": "coeur",
+            "nombre": 12
+        },
+        {
+            "couleur": "carreaux",
+            "nombre": 7
+        },
+        {
+            "couleur": "pic",
+            "nombre": 11
+        },
+        {
+            "couleur": "pic",
+            "nombre": 7
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 9
+        },
+        {
+            "couleur": "carreaux",
+            "nombre": 9
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 2
+        },
+        {
+            "couleur": "coeur",
+            "nombre": 7
+        },
+        {
+            "couleur": "pic",
+            "nombre": 4
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 10
+        },
+        {
+            "couleur": "trèfle",
+            "nombre": 3
+        },
+        {
+            "couleur": "pic",
+            "nombre": 2
+        },
+        {
+            "couleur": "pic",
+            "nombre": 8
+        },
+        {
+            "couleur": "coeur",
+            "nombre": 14
+        }
+    ]
+}
