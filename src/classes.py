@@ -220,9 +220,18 @@ class Bataille():
     def run(self) -> Joueur | None:
         """ Bataille -> Joueur | NoneType
         Lance une partie de bataille """
+        cround = 0
         while not self.fin_partie():
-            # input("Prochain tour\n")
-            self.jouer_tour()
-            print(f"CARTES JOUEUR 1 [{len(self.joueur1.main)}]", ": ", self.joueur1.main)
-            print(f"CARTES JOUEUR 2 [{len(self.joueur2.main)}]: ", self.joueur2.main)
-        return self.fin_partie(getPlayer=True)
+            if cround <= 2000:
+                self.jouer_tour()
+                # input("Prochain tour\n")
+                print(f"CARTES JOUEUR 1 [{len(self.joueur1.main)}]", ": ", self.joueur1.main)
+                print(f"CARTES JOUEUR 2 [{len(self.joueur2.main)}]: ", self.joueur2.main)
+                cround += 1
+            else:
+                print("Trop de tours, on arrête.")
+                break
+        print("La partie est finie !")
+        joueur = self.fin_partie(getPlayer=True)
+        print("Le joueur gagnant est: ", joueur, "avec ", len(joueur.main), "cartes.")
+        return joueur
