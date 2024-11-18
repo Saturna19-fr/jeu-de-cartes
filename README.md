@@ -1,5 +1,5 @@
 <!-- On peut faire du HTML dans certaines proportions en .md -->
-<!-- Ce fichier est idéalement à lire directement sur GitHub, puisqu'il utilise des formulations de mise en page uniquement présentes sur GitHub. Dans le cas contraire, il pourra y avoir des problèmes de mise en page, qui sont résolus dans le fichier README_nongithub.md -->
+<!-- Ce fichier est idéalement à lire directement sur GitHub, puisqu'il utilise des formulations de mise en page uniquement présentes sur GitHub. Dans le cas contraire, il pourra y avoir des problèmes de mise en page -->
 <div align="center">
     <img src="docs/assets/Header.png" />
     <h1>Jeu de Cartes: Projet de NSI</h1>
@@ -102,3 +102,10 @@ pip3 install -r requirements.txt
 <!-- https://www.youtube.com/watch?v=AYYcBjtxp84 -->
 
 # Tests
+Les tests sont sous ./tests, avec Unittest.
+On peut les voir sur Python avec Unittest ou sinon sur [Github (Workflow)](https://github.com/Saturna19-fr/jeu-de-cartes/actions/workflows/python_tests.yml)
+
+- [x] Longueur du paquet si y'a toutes les cartes
+- [ ] S'il y a des dupliqués
+
+- [x] Simuler une bataille avec x cartes

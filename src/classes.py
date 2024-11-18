@@ -1,7 +1,9 @@
+# Code de Thibault
 from random import randint, shuffle
 import os
 import time
 import json
+from .graphics import print_card
 CARTES = {
     14: "As",
     13: "Dame",
@@ -42,11 +44,13 @@ class Carte:
 
 class Deck:
     """Représente un paquet de 52 cartes"""
-    def __init__(self) -> None:
+    def __init__(self, predef_content = None) -> None:
         self.contenu = []
         for valeur in ["trèfle", "pic", "carreaux", "coeur"]:
             for nb in CARTES.keys():
                 self.contenu.append(Carte(valeur, nb))
+        if predef_content:
+            self.contenu = predef_content
     
     # def tirer(self, indice:int = 0) -> Carte:
     def tirer(self, preindice:int = None) -> Carte:
@@ -79,8 +83,9 @@ class Deck:
     
 class Joueur:
     """Représente un joueur"""
-    def __init__(self) -> None:
+    def __init__(self,id:int = None) -> None:
         self.main = []
+        self._hiddenid = id
 
 
     def piocher_carte(self, deck:Deck) -> None:
@@ -108,20 +113,21 @@ class Joueur:
     
 
 class Bataille():
-    def __init__(self, j1, j2) -> None:
+    def __init__(self, j1, j2, CustomDeck = None) -> None:
         self.joueur1:Joueur = j1
         self.joueur2:Joueur = j2
         self.pile = []
 
-        self.deck = Deck()
-        self.deck.melanger()
+        self.deck = CustomDeck or Deck()
+        if not CustomDeck:
+            self.deck.melanger()
         self.distribuer()
+        print('\n'.join(map(str, self.joueur1.main)))
 
 
     def fin_partie(self, ind:int=0, getPlayer:bool = False) -> bool|Joueur:
         """ Bataille, int -> bool
         Vérifie si la partie est terminée. Si ind est passé,alors on vérifie si un des deux joueurs a ind cartes, sinon 0. """
-        print("Fin de partie: ", len(self.joueur1.main) == ind or len(self.joueur2.main) == ind)
         checkFP = len(self.joueur1.main) == ind or len(self.joueur2.main) == ind
         if getPlayer:
             return self.joueur1 if len(self.joueur1.main) > len(self.joueur2.main) else self.joueur2
@@ -134,13 +140,16 @@ class Bataille():
                 self.pile = []
             return # Partie finie, même en cas de bataille !
                 
-        print("On commence un tour avec {}, {}".format(self.joueur1.main[-1], self.joueur2.main[-1]))
+        # print("On commence un tour avec {}, {}".format(self.joueur1.main[-1], self.joueur2.main[-1]))
         # On compare les deux cartes
-        print(len(self.joueur1.main), len(self.joueur2.main))
+        # print(len(self.joueur1.main), len(self.joueur2.main))
+        print_card(self.joueur1.main[-1].nombre, self.joueur1.main[-1].couleur)
+        print("     VS      ")
+        print_card(self.joueur2.main[-1].nombre, self.joueur2.main[-1].couleur)
         self.pile.append(self.joueur1.jouer_carte())
         self.pile.append(self.joueur2.jouer_carte())
-        print(len(self.joueur1.main), len(self.joueur2.main))
-        print(len(self.pile))
+        # print(len(self.joueur1.main), len(self.joueur2.main))
+        # print(len(self.pile))
 
         carte_une_bat_deux = self.pile[-2].bat(self.pile[-1])
         if skipcheck: return carte_une_bat_deux
@@ -151,12 +160,12 @@ class Bataille():
         if carte_une_bat_deux:
             print("Le joueur 1 gagne !")
             self.joueur1.ramasser_all(*self.pile)
-            print(self.joueur1.main)
+            # print(self.joueur1.main)
             self.pile = []
         else:
             print("Le joueur 2 gagne !")
             self.joueur2.ramasser_all(*self.pile)
-            print(self.joueur2.main)
+            # print(self.joueur2.main)
             self.pile = []
 
 # ToDo: ajouter un check pour vérifier si bataille à la fin + plus de cartes ne fait plus crash.
@@ -172,7 +181,7 @@ class Bataille():
     def distribuer(self) -> None:
         """ Bataille -> NoneType
         Distribue le deck aux joueurs """
-        print("Mon deck est ", self.deck)
+        # print("Mon deck est ", self.deck)
         for i in range(0, len(self.deck)):
             if i % 2 == 0:
                 self.joueur1.piocher_carte(self.deck)
@@ -225,8 +234,8 @@ class Bataille():
             if cround <= 2000:
                 self.jouer_tour()
                 # input("Prochain tour\n")
-                print(f"CARTES JOUEUR 1 [{len(self.joueur1.main)}]", ": ", self.joueur1.main)
-                print(f"CARTES JOUEUR 2 [{len(self.joueur2.main)}]: ", self.joueur2.main)
+                # print(f"CARTES JOUEUR 1 [{len(self.joueur1.main)}]", ": ", self.joueur1.main)
+                # print(f"CARTES JOUEUR 2 [{len(self.joueur2.main)}]: ", self.joueur2.main)
                 cround += 1
             else:
                 print("Trop de tours, on arrête.")

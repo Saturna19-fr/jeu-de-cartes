@@ -1,3 +1,5 @@
+# Code de Thibault
+# Crash test
 class Bataille:
     """Simule le jeu de la bataille entre deux joueurs"""
     def __init__(self, j1, j2):
